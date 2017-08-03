@@ -6,8 +6,4 @@ router.get('/', function(req, res, next) {
   res.send("Ola Node JS! Agora Com NodeMom!");
 });
 
-router.get('/', function(req, res, next) {
-  res.send("Teste NodeJS");
-});
-
 module.exports = router;
