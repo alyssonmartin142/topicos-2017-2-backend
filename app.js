@@ -4,8 +4,10 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
+var todos = require('./routes/todos');
 
 // Inicia express
 var app = express();
@@ -18,16 +20,17 @@ app.use(cookieParser());
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/todos', todos);
 
 // Capitura erros 404
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
 // capitura exeptions
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
