@@ -1,5 +1,6 @@
 // Realiza Importes
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -9,6 +10,7 @@ var todos = require('./routes/todos');
 
 // Inicia express
 var app = express();
+app.use(cors());
 
 // Configura os middlewares do express
 app.use(logger('dev'));
