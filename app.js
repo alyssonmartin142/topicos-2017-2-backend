@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Definição dos arquivos de rotas
-app.use('/todos', todos);
+app.use("/todos", todos);
 
 // Captura os erros 404
 app.use(function(req, res, next) {
